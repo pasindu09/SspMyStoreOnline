@@ -6,24 +6,24 @@ import typography from '@tailwindcss/typography';
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
-        './storage/framework/views/*.php',
+       './vendor/laravel/jetstream/**/*.blade.php',
+       './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+      /*  './resources/views/layouts/*.blade.php',*/
     ],
-
     theme: {
         extend: {
-            colors: {
-                blue: {
-                  '600': '#3366CC',
-                },
-              },
+            margin:{
+             '144': '12rem',
+            },
+            height:{
+              'one': '65vh',
             },
             fontFamily: {
-                inter: ['Inter', 'sans-serif'],
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
-    
+    },
 
     plugins: [forms, typography],
 };

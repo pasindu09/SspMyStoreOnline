@@ -15,6 +15,21 @@ class Product extends Model
         'productprice',
         'productdescription',
         'productimage',
+        'seller_id',
     ];
+
+
+
+    public function sellertableconnection()
+    {
+        return $this->belongsTo(sellers::class, 'seller_id');
+    }
+   
+
+    public function productImage()
+    {
+        return $this->hasOne(Photo::class, 'id', 'productimage'); // Assuming 'productimage' is the foreign key column
+    }
+
 }
 

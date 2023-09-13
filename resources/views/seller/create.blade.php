@@ -191,23 +191,20 @@
 <div class="mt-5 ml-20">
   <div x-data="{ openModal: false }">
     <button x-on:click="openModal = true" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full flex items-center">
-      <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-      </svg>
       <span>Create Product</span>
     </button>
 
     
     <div x-show="openModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div class="bg-white rounded shadow-lg p-8 w-2/3 h-4/5">
-        <button x-on:click="openModal = false" class="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700">
+        <button x-on:click="openModal = false" class="text-gray-500 hover:text-gray-700 justify-end">close
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M15.293 16.707a1 1 0 0 1-1.414 0L10 11.414l-3.879 3.879a1 1 0 1 1-1.414-1.414L8.586 10 4.707 6.121a1 1 0 1 1 1.414-1.414L10 8.586l3.879-3.879a1 1 0 1 1 1.414 1.414L11.414 10l3.879 3.879a1 1 0 0 1 0 1.414z" clip-rule="evenodd" />
           </svg>
         </button>
 
        
-        <form action="{{ url('products') }}" method="post">
+        <form action="{{ url('products') }}" method="post" enctype="multipart/form-data">
         @csrf
           
           <div class="mb-4">
@@ -225,10 +222,22 @@
             <textarea id="description" name="productdescription" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Enter description"></textarea>
           </div>
 
-          <div class="mb-4">
+          <div class="mb-4 hidden">
             <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Product Image:</label>
-            <input type="text" id="image" name="productimage" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Enter image URL">
+            <input type="text" id="image" name="productimage" class="w-full border border-gray-300 rounded px-4 py-2" value="unknownn" placeholder="Enter image URL">
           </div>
+
+          
+          <div class="mb-4">
+            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Product Image 2:</label>
+            <input type="file" id="photo" name="photo" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Enter image URL">
+          </div>
+
+          <div class="mb-4 hidden">
+    <input type="text" id="ps" name="productseller" class="w-full border border-gray-300 rounded px-4 py-2" value="{{ $sellerId }}">
+</div>
+
+
           <div class="flex justify-center">
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Submit
@@ -239,6 +248,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!--creating a table to display the product details-->
 
@@ -260,7 +271,16 @@
                     <td class="py-4 px-6 border-b">{{ $item->Productname }}</td>
                     <td class="py-4 px-6 border-b">{{ $item->productprice }}</td>
                     <td class="py-4 px-6 border-b">{{ $item->productdescription }}</td>
-                    <td class="py-4 px-6 border-b">{{ $item->productimage }}</td>
+                    @if($item->productImage)
+                  
+                    <td class="py-4 px-6 border-b"><img class="w-32 md:w-48 lg:w-64 xl:w-80" src="{{ asset($item->productImage->path) }}" alt="{{ $image->name }}"></td>
+                 
+                    @else
+                    <td class="py-4 px-6 border-b">No image</td>
+                    @endif
+
+                    
+                    
                     <td class="py-4 px-3 border-b">
                         <div class="flex items-center justify-center space-x-2">
                             <a href="{{ url('/products/' . $item->id . '/edit') }}">
@@ -269,7 +289,7 @@
                             <form method="POST" action="{{ url('/products/' . $item->id) }}">
                                 @csrf
                                 {{ method_field('DELETE') }}
-                                <button type="submit" onclick="return confirm(&quot;Confirm delete?&quot;)" class="px-3 py-1 rounded-full bg-red-500 text-white hover:bg-red-700 transition duration-200">Delete</button>
+                                <button type="submit" onclick="return confirm(&quot;Confirm delete?&quot;)"585 class="px-3 py-1 rounded-full bg-red-500 text-white hover:bg-red-700 transition duration-200">Delete</button>
                             </form>
                         </div>
                     </td>

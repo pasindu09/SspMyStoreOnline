@@ -6,7 +6,9 @@ use App\Http\Controllers\RegisteredSellerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminController2;
-
+use App\Http\Controllers\JoinTableController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\WelcomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +20,10 @@ use App\Http\Controllers\AdminController2;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+
+
+
+Route::get('/', [WelcomeController::class, "welcome"])->name('welcome');
 
 
 
@@ -48,10 +51,10 @@ Route::post('/register/seller', [RegisteredSellerController::class, 'store'])
     ->middleware('guest')
     ->name('seller.register');
 
-    Route::get('/seller/product/create', function () {
+   /* Route::get('/seller/product/create', function () {
         return view('seller.create');
     })->middleware(['auth',])
-    ->name('productcreate');
+    ->name('productcreate');*/
 
 
 //username--Admin1@gmail.com    password-12345678
@@ -64,3 +67,11 @@ Route::resource("users", AdminController::class)->middleware('auth');
 Route::resource("usersseller", AdminController2::class)->middleware('auth');
 
 /*Route::get('/redirects', [AdminController::class, 'index']);*/
+
+
+//route::get('/join', [JoinTableController::class, "showSellerInfo"]);
+
+//route::get('/join/{id}', [ProductController::class, "getIdImage"]);
+
+//productview route
+Route::get('/productview/{item}',[WelcomeController::class, "productview"])->name('product.view');

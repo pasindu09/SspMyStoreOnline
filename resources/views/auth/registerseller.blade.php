@@ -33,7 +33,7 @@
 
             <div class="mt-4">
                 <x-label for="contactno" value="{{ __('Contact No') }}" />
-                <x-input id="contactno" class="block mt-1 w-full" type="text" name="contactno" :value="old('contactno')" required autocomplete="contact number" />
+                <x-input id="contactno" class="block mt-1 w-full" type="text" name="contactno" :value="old('contactno')" required autocomplete="contactno" />
             </div>
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />

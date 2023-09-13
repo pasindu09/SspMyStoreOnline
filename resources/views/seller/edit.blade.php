@@ -24,7 +24,7 @@
                     <button x-on:click="openModal = false" class="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700">
                         Close
                     </button>
-                    <form action="{{ url('/products/' . $itemcreated->id) }}" method="post">
+                    <form action="{{ url('/products/' . $itemcreated->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         <div class="mb-4">
@@ -41,12 +41,17 @@
 
                         </div>
                         <div class="mb-4">
-                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Product Image:</label>
-                            <input type="text"  value="{{$itemcreated->productimage}}"  id="image" name="productimage" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Enter image URL">
+                            <label for="Image" class="block text-gray-700 text-sm font-bold mb-2">Current Product Image:</label>
+                        
+                        <div class="py-4 px-6"><img class="w-32 md:w-48 lg:w-64 xl:w-80" src="{{ asset($itemcreated->productImage->path) }}" alt="">
                         </div>
                         <div class="mb-4">
-                        
-                        </div>
+                       <label for="Image" class="block text-gray-700 text-sm font-bold mb-2">Change Product Image:</label>
+            <input type="file" id="photo" name="photo" class="w-full px-4 py-2" placeholder="Enter image URL">
+          </div>
+          <div class="mb-4 hidden">
+    <input type="text" id="ps" name="photoid" class="w-full border border-gray-300 rounded px-4 py-2" value="{{$itemcreated->productimage}}">
+</div>
                         <div class="flex justify-center">
                             <button type="submit" value="Update Product"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Update Product
