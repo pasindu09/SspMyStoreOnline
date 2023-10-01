@@ -23,7 +23,9 @@ use App\Http\Controllers\WelcomeController;
 
 
 
-Route::get('/', [WelcomeController::class, "welcome"])->name('welcome');
+Route::get('/', function () {
+    return view('welcome');
+})->name('welcome');
 
 
 
@@ -74,4 +76,5 @@ Route::resource("usersseller", AdminController2::class)->middleware('auth');
 //route::get('/join/{id}', [ProductController::class, "getIdImage"]);
 
 //productview route
-Route::get('/productview/{item}',[WelcomeController::class, "productview"])->name('product.view');
+Route::get('/productview/{item}/{user}',[ProductController::class, "productview"])->name('product.view');
+

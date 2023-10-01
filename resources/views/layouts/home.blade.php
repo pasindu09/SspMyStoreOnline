@@ -13,12 +13,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
+        
+
     </head>
     <nav class="bg-gray-50 sticky top-0 z-50 py-2 px-4 md:px-8 rounded-b-3xl border-b-4 border-blue-100">
     <div class="container mx-auto flex flex-wrap md:flex-no-wrap items-center justify-between">
         <div class="flex items-center space-x-4 mb-2 md:mb-0">
             <img src="{{ asset('image/logo_transparent.png') }}" alt="My Image" class="w-16 h-16 md:w-20 md:h-20 mr-2 md:mr-6">
-            <a class="font-inter font-medium text-lg text-gray-900 hover:text-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 mr-2 md:mr-4" href="#">Home</a>
+            <a class="font-inter font-medium text-lg text-gray-900 hover:text-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 mr-2 md:mr-4" href="{{ url('/') }}">Home</a>
             <a class="font-inter font-medium text-lg text-gray-900 hover:text-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110 mr-2 md:mr-4" href="{{ route('register.seller') }}">Sell Now</a>
             <a class="font-inter font-medium text-lg text-gray-900 hover:text-blue-500 transition-all duration-300 ease-in-out transform hover:scale-110" href="#">Our Stores</a>
         </div>
@@ -52,17 +54,19 @@
             @endif
         </div>
 
-        <div id="nav-cart-count-container" style="display: flex; align-items: center;">
-    <span class="nav-cart-icon nav-sprite" style="position: relative;">
-    <svg xmlns="http://www.w3.org/2000/svg" height="2em" width="2em"viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
-        <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-1 nav-progressive-attribute nav-progressive-content" style="position: absolute; top: -8px; right: -8px; background-color: #FF9900; color: #ffffff; border-radius: 50%; padding: 4px 6px; font-size: 12px;">3</span>
-    </span>
-</div>
 
+@livewire('cart-items')
+
+
+        
     </div>
 </nav>
 
     <body>
+        
+
+ <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
@@ -99,7 +103,8 @@
 
 
 
-
-
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+@livewireScripts
     </body>
 </html>

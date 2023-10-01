@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
 use App\Models\Photo;
 use App\Models\Product;
 use App\Models\sellers;
@@ -170,6 +171,12 @@ public function getIdImage($id)
         
         Product::destroy($id);
         return redirect('products');
+    }
+
+    public function productview($item,$user){
+        $product = Product::with('productImage')->find($item);
+        $quantity = cart::where('product_id', $item)->where('usersession', $user)->value('quantity');
+       return view('productview', compact('product','quantity'));
     }
     
 

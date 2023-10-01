@@ -76,32 +76,7 @@
 </div>
 
 
-<div class="grid mr-12 ml-12 mt-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-    @foreach($products as $item)
-    <div class="bg-white border p-4 rounded-lg shadow-md flex-col flex">
-    <div style="height:40vh; display: flex; align-items: center; justify-content: center;" class="border mb-2"> 
-    <img style="max-width: 100%; max-height: 100%;" src="{{ asset($item->productImage->path) }}" alt="">
-    </div>
-        <div class="text-xl mt-6 font-semibold">{{ $item->Productname }}</div>
-        <div class="text-lg mt-2 mb-2 font-light">{{ $item->productprice }}</div>
-        <div class="mt-auto flex justify-between mt-6">
-        
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Add To Cart</button>
-            <form action="{{ route('product.view', ['item' => $item->id]) }}" method="GET">
-        
-            <button type="submit" onclick="" class="bg-gray-200 text-gray-700 py-2 px-4 rounded">View</button>
-            </form>
-        </div>
-    </div>
-    @endforeach
-</div>
-
 @livewire('test1')
-
-<div class="h-44 border">
-<x-home-div> </x-home-div>
-</div>
-
 
 </x-home-layout>
 
