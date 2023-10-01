@@ -18,8 +18,8 @@ class cart extends Model
         'Abandonedtimes',
         'usersession',
         'quantity',
-        'imagepath'
-
+        'imagepath',
+        'Selected'
     ];
 
 

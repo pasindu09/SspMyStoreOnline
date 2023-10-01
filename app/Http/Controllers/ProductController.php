@@ -175,8 +175,47 @@ public function getIdImage($id)
 
     public function productview($item,$user){
         $product = Product::with('productImage')->find($item);
-        $quantity = cart::where('product_id', $item)->where('usersession', $user)->value('quantity');
+        $quantity = cart::where('product_id', $item)->where('usersession', $user)->first();
        return view('productview', compact('product','quantity'));
+    }
+
+    public function quantityUpdate($user, $id){
+        $cartItem = Cart::where('id', $id)->first();
+    
+        if($cartItem){
+            $cartItem->update([
+                'quantity' => 0,
+            ]);
+        }
+        return redirect()->back();
+    }
+    
+    public function quantityAddtocart(Request $request,$user, $id){
+        $cartItem = Cart::where('id', $id)->first();
+    
+        if($cartItem){
+            $cartItem->update([
+                'quantity' => $request->quantity,
+            ]);
+        }
+        return redirect()->back();
+    }
+
+    public function quantityAddtocart2(Request $request,$user, $id){
+        if(auth()->check()){
+            $user = auth()->user()->id;
+        }
+        else{
+            $user = session()->getId();
+        }
+        $cartItem = Cart::where('product_id', $id)->where('usersession',$user)->first();
+    
+        if($cartItem){
+            $cartItem->update([
+                'quantity' => $request->quantity,
+            ]);
+        }
+        return redirect()->back();
     }
     
 

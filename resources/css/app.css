@@ -6,8 +6,3 @@
 [x-cloak] {
     display: none;
 }
-
-
-.checkbox:checked + .cart-item {
-    background-color: #f0f8ff; /* Change to your desired highlight color */
-}

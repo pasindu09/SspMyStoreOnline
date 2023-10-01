@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('viewclicks')->nullable();
             $table->string('Abandonedtimes')->nullable();
             $table->string('imagepath')->nullable();
+            $table->string('Selected')->nullable();
             $table->timestamps();
         });
     }

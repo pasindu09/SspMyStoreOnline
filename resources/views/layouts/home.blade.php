@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-
+          
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -14,9 +14,8 @@
         <!-- Scripts -->
         <script src="https://cdn.tailwindcss.com"></script>
         
-
     </head>
-    <nav class="bg-gray-50 sticky top-0 z-50 py-2 px-4 md:px-8 rounded-b-3xl border-b-4 border-blue-100">
+    <nav class="bg-gray-50 sticky top-0 z-50 py-2 px-4 md:px-8 rounded-b-3xl border-b-2 border-blue-200">
     <div class="container mx-auto flex flex-wrap md:flex-no-wrap items-center justify-between">
         <div class="flex items-center space-x-4 mb-2 md:mb-0">
             <img src="{{ asset('image/logo_transparent.png') }}" alt="My Image" class="w-16 h-16 md:w-20 md:h-20 mr-2 md:mr-6">
@@ -67,6 +66,13 @@
 
  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+        <script>
+function updateCheckboxState(checkbox, itemId) {
+    var isCheckedd = true;
+    var isChecked = checkbox.checked;
+    Livewire.emit('checkboxClicked', isChecked, itemId, isCheckedd);
+}</script>
+
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>

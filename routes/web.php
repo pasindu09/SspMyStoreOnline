@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController2;
 use App\Http\Controllers\JoinTableController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\AdressBookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,9 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-
+Route::get('/crm', function () {
+    return view('seller.crmdashboard');
+})->name('crm');
 
 
 Route::get('/', function () {
@@ -77,4 +80,19 @@ Route::resource("usersseller", AdminController2::class)->middleware('auth');
 
 //productview route
 Route::get('/productview/{item}/{user}',[ProductController::class, "productview"])->name('product.view');
+Route::post('/products/itemremove/{user}/{id}', [ProductController::class, 'quantityUpdate']);
+Route::post('/products/itemadd/{user}/{id}', [ProductController::class, 'quantityAddtocart']);
+Route::post('/products/itemadd2/{user}/{id}', [ProductController::class, 'quantityAddtocart2']);
 
+
+
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
+Route::get('/getcreateadress', function () {
+    return view('createaddressbook');
+})->name('addresscreate');
+     
+
+Route::post('/createAdressBook', [AdressBookController::class, 'createAdressBook'])->name('createAdressBook');
