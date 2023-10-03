@@ -48,9 +48,9 @@
     class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md  font-medium leading-5 text-gray-800 hover:text-black hover:border-blue-500 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out"
     >Add Product Categories</a>
 
-    <a href="{{ route('dashboard') }}"
+    <a href="{{ route('crm') }}"
     class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-md font-medium leading-5 text-gray-800 hover:text-black hover:border-blue-500 focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out"
-    >User Role Management</a>
+    >CRM</a>
     </div>
         </div>
 
@@ -173,53 +173,45 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10">
     
     <div class="bg-white rounded-lg shadow-xl p-6 flex items-center justify-center">
-      <svg class="fill-primary dark:fill-white w-12 h-12 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      
       <i class="fas fa-money-bill sales-icon"></i> 
       <div>
-        <h2 class="text-lg font-semibold mb-2">Today's Sales</h2>
-        <p class="text-2xl text-blue-600">$5000</p>
+        <h2 class="text-lg font-semibold mb-2"></h2>
+        <p class="text-2xl text-blue-600"></p>
       </div>
     </div>
 
     
     <div class="bg-white rounded-lg shadow-xl p-6 flex items-center justify-center">
-      <svg class="fill-primary dark:fill-white w-12 h-12 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+     
       <div>
-        <h2 class="text-lg font-semibold mb-2">This Month's Sales</h2>
-        <p class="text-2xl text-blue-600">$10000</p>
+        <h2 class="text-lg font-semibold mb-2"></h2>
+        <p class="text-2xl text-blue-600"></p>
       </div>
     </div>
 
    
     <div class="bg-white rounded-lg shadow-xl p-6 flex items-center justify-center">
-      <svg class="fill-primary dark:fill-white w-12 h-12 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+      
       <div>
-        <h2 class="text-lg font-semibold mb-2">Total Customers</h2>
-        <p class="text-2xl text-blue-600">100</p>
+        <h2 class="text-lg font-semibold mb-2"></h2>
+        <p class="text-2xl text-blue-600"></p>
       </div>
     </div>
 
    
     <div class="bg-white rounded-lg shadow-xl p-6 flex items-center justify-center">
-      <svg class="fill-primary dark:fill-white w-12 h-12 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
+    
       <div>
-        <h2 class="text-lg font-semibold mb-2">Total Products Sold</h2>
-        <p class="text-2xl text-blue-600">50</p>
+        <h2 class="text-lg font-semibold mb-2"></h2>
+        <p class="text-2xl text-blue-600"></p>
       </div>
     </div>
   </div>
 
   <div class="mt-8 bg-white rounded-lg shadow-xl p-6 text-center">
     <h2 class="text-lg font-semibold mb-4">Seller Overview</h2>
-    <p>Additional content and details for the seller overview.</p>
+    <p>Additional content and details for the seller overview moved to the crm.</p>
   </div>
 </div>
 

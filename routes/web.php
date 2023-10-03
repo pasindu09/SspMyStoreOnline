@@ -96,3 +96,13 @@ Route::get('/getcreateadress', function () {
      
 
 Route::post('/createAdressBook', [AdressBookController::class, 'createAdressBook'])->name('createAdressBook');
+
+
+Route::get('/myaddressbook', function () {
+    return view('myaddressbook');
+})->name('myaddressbook');
+
+Route::get('/myorder', function () {
+    return view('Myorder');
+})->name('myorder');
+

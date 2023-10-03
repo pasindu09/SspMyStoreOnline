@@ -121,8 +121,8 @@
                 <div class="text-white">
                     <div class="flex p-2  bg-gray-800">
                         <div class="flex py-3 px-2 items-center">
-                            <p class="text-2xl text-green-500 font-semibold">SA</p> <p class="ml-2 font-semibold italic">
-                            DASHBOARD</p>
+                            <p class="text-2xl text-green-500 font-semibold">MyStore</p> <p class="ml-2 font-semibold italic">
+                            Online</p>
                         </div>
                     </div>
                     <div>
@@ -344,7 +344,7 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">$4.510</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">$4510</div>
 
                                                     <div class="mt-1 text-base text-gray-600">$Total Revenue</div>
                                                 </div>
@@ -368,9 +368,9 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">$3000</div>
 
-                                                    <div class="mt-1 text-base text-gray-600">Item Sales</div>
+                                                    <div class="mt-1 text-base text-gray-600">Revenue For The Month</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -395,9 +395,9 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">32</div>
 
-                                                    <div class="mt-1 text-base text-gray-600">Item Sales</div>
+                                                    <div class="mt-1 text-base text-gray-600">Total Items Sold</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -419,9 +419,9 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">55%</div>
 
-                                                    <div class="mt-1 text-base text-gray-600">Item Sales</div>
+                                                    <div class="mt-1 text-base text-gray-600">Increase In Sales</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -430,8 +430,8 @@
                             </div>
                             <div class="col-span-12 mt-5">
                                 <div class="grid gap-2 grid-cols-1 lg:grid-cols-2">
-                                    <div class="bg-white shadow-lg p-4" id="chartline"></div>
-                                    <div class="bg-white shadow-lg" id="chartpie"></div>
+                                    <div class="bg-white shadow-lg p-4" id="chartline"><h1 class="bold">Sale For the Month</h1></div>
+                                    <div class="bg-white shadow-lg" id="chartpie"><h1 class="mt-4 ml-4">Item Sale Percentage For the Month</h1></div>
                                 </div>
                             </div>
                             <div class="col-span-12 mt-5">
@@ -468,22 +468,41 @@
                                                                         <th
                                                                             class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                                                             <div class="flex cursor-pointer">
-                                                                                <span class="mr-2">ACTION</span>
+                                                                                <span class="mr-2">View Clicks</span>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th
+                                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                            <div class="flex cursor-pointer">
+                                                                                <span class="mr-2">Add To Cart Clicks</span>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th
+                                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                            <div class="flex cursor-pointer">
+                                                                                <span class="mr-2">Item Abandoned times Cart</span>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th
+                                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                            <div class="flex cursor-pointer">
+                                                                                <span class="mr-2">Item Not Checked Out</span>
                                                                             </div>
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody class="bg-white divide-y divide-gray-200">
+                                                                @foreach($userproduct as $index => $product)
                                                                     <tr>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>Apple MacBook Pro 13</p>
+                                                                            <p>{{$product->Productname}}</p>
                                                                             <p class="text-xs text-gray-400">PC & Laptop
                                                                             </p>
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>77</p>
+                                                                            <p>{{$product->id}}3</p>
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
@@ -502,34 +521,22 @@
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <div class="flex space-x-4">
-                                                                                <a href="#" class="text-blue-500 hover:text-blue-600">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                    class="w-5 h-5 mr-1"
-                                                                                    fill="none" viewBox="0 0 24 24"
-                                                                                    stroke="currentColor">
-                                                                                    <path stroke-linecap="round"
-                                                                                        stroke-linejoin="round"
-                                                                                        stroke-width="2"
-                                                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                                                </svg>
-                                                                                <p>Edit</p>
-                                                                                </a>
-                                                                                <a href="#" class="text-red-500 hover:text-red-600">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                    class="w-5 h-5 mr-1 ml-3"
-                                                                                    fill="none" viewBox="0 0 24 24"
-                                                                                    stroke="currentColor">
-                                                                                    <path stroke-linecap="round"
-                                                                                        stroke-linejoin="round"
-                                                                                        stroke-width="2"
-                                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                                                </svg>
-                                                                                <p>Delete</p>
-                                                                                </a>
-                                                                            </div>
+                                                                            <p>{{$viewclicks[$index]->viewclicks}}</p>
+                                                                        </td>
+                                                                        <td
+                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            <p>{{$viewclicks[$index]->addtocartclicks}}</p>
+                                                                        </td>
+                                                                        <td
+                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            <p>{{$viewclicks[$index]->addtocartclicks}}</p>
+                                                                        </td>
+                                                                        <td
+                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            <p>{{$viewclicks[$index]->viewclicks}}</p>
                                                                         </td>
                                                                     </tr>
+                                                                    @endforeach
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -585,11 +592,11 @@
         var chart = document.querySelector('#chartline')
         var options = {
             series: [{
-                name: 'TEAM A',
+                name: 'Prior Year',
                 type: 'area',
                 data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33]
             }, {
-                name: 'TEAM B',
+                name: 'This Year',
                 type: 'line',
                 data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
             }],
@@ -615,13 +622,13 @@
             },
             yaxis: [{
                     title: {
-                        text: 'Series A',
+                        text: 'Prior Year',
                     },
                 },
                 {
                     opposite: true,
                     title: {
-                        text: 'Series B',
+                        text: 'This Year',
                     },
                 },
             ],
@@ -631,7 +638,7 @@
                 y: {
                     formatter: function(y) {
                         if (typeof y !== "undefined") {
-                            return y.toFixed(0) + " points";
+                            return y.toFixed(0) + " items Sold";
                         }
                         return y;
                     }
@@ -669,7 +676,7 @@
                     }
                 }
             },
-            labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
+            labels: ['Product1', 'Product2', 'Product3', 'Product4'],
         };
         var chart = new ApexCharts(chart, options);
         chart.render();
