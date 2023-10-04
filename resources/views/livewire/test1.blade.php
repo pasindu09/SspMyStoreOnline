@@ -16,7 +16,7 @@
             @if($value['quantity'] == 0)
             <button wire:click="addToCart({{ $item->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Add To Cart</button>
             @else
-            <button wire:click="removeCartItem({{$value['product_id']}})" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Remove From Cart</button>
+            <button wire:click="removeCartItem({{$value['product_id']}})" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Remove</button>
             @endif
 
 
@@ -42,7 +42,7 @@
             @if($value['quantity'] == 0)
             <button wire:click="addToCart({{ $item->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Add To Cart</button>
             @else
-            <button wire:click="removeCartItem({{$value['product_id']}})" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Remove From Cart</button>
+            <button wire:click="removeCartItem({{$value['product_id']}})" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 border border-black-100 rounded shadow">Remove</button>
             @endif
 
 

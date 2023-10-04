@@ -27,6 +27,7 @@ class CartItems extends Component
     public $totalPrice;
     public $arrayOfItemSelectedOrNot;
     public $selectedCartItems;
+    public $cartquantitytotal;
     protected $listeners = [
         'refreshComponent' => 'mount',
         'checkboxClicked' => 'handleCheckboxClicked'
@@ -41,7 +42,7 @@ class CartItems extends Component
     }
 
     public function mount()
-    {
+    {  $this->cartquantitytotal = 0;
         $this->selectedItemCount;
         $this->selectedItemCount1;
         $this->perCartTotal = 0.00;
@@ -56,6 +57,7 @@ class CartItems extends Component
                     $priceWithoutDollarSign = (float) str_replace('$', '', $item->productImage->productprice);
                     $totalPrice = $priceWithoutDollarSign * (int) $item->quantity;
                     $this->totalPriceForItem[] = $totalPrice; // Add the total price to the array
+                    $this->cartquantitytotal += (int)$item->quantity;
                 }
                 $this->perCartTotal = 0.00;
                 $this->totalPrice = 0.00;
@@ -81,6 +83,7 @@ class CartItems extends Component
                     $priceWithoutDollarSign = (float) str_replace('$', '', $item->productImage->productprice);
                     $totalPrice = $priceWithoutDollarSign * (int) $item->quantity;
                     $this->totalPriceForItem[] = $totalPrice; // Add the total price to the array
+                    $this->cartquantitytotal += (int)$item->quantity;
                 }
 
                 $this->perCartTotal = 0.00;

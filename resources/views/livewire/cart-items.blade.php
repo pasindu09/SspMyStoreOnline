@@ -16,7 +16,13 @@
     <div style="height:90vh; width:80%" class="bg-white rounded shadow-md">
 
       <div class="flex justify-end p-2"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="isOpen = false">Close</button></div>
-      <h1 class="mb-12 text-center text-2xl font-bold">Cart Items</h1>
+      <h1 class="mb-12 text-center text-2xl font-bold justify-center">Cart Items</h1>
+      @if($cartquantitytotal == 0)
+      <div class="flex justify-center">
+      <h1 class="text-xl">No cart items added To the Cart</h1>
+      </div>
+      @else
+    
       <div class="text-gray-600 font-bold flex items-center py-4 px-28">
         <input type="checkbox" class="w-4 h-4 mr-2" wire:model="IsChecked">
         @if($selectedItemCount1 > 1)
@@ -117,6 +123,7 @@
           <button wire:click="checkout()" onclick="" class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
         </div>
       </div>
+      @endif
     </div>
   </div>
 </div>
