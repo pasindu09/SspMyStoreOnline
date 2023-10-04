@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\AdressBook;
 use App\Models\cart;
+use App\Models\Order;
 use Livewire\Component;
 
 class Checkout extends Component
@@ -16,6 +17,7 @@ class Checkout extends Component
     public $ordertotal;
     public $tax;
     public $finaltotal;
+    public $Shipping;
     public $eachitemperpricefoquantity;
     public function render()
     {
@@ -25,6 +27,7 @@ class Checkout extends Component
     public function mount()
     {
         if (auth()->check()) {
+            $this->Shipping = 0;
             $this->ordertotal = 0;
             $this->tax = 0;
             $this->finaltotal = 0;
@@ -38,7 +41,8 @@ class Checkout extends Component
                 $this->eachitemperpricefoquantity[] = $totalPrice;
                 $this->ordertotal += $totalPrice;
                 $this->tax += $totalPrice * 0.01;
-                $this->finaltotal = $this->ordertotal + $this->tax;
+                $this->Shipping = 4.99;
+                $this->finaltotal = $this->ordertotal + $this->tax + $this->Shipping;
             }
             $this->items = $items;
 
@@ -51,6 +55,18 @@ class Checkout extends Component
     }
     public function placeorder()
     {
+        $adressshipping = $this->adress[0]->country . ' ' . $this->adress[0]->street . ' ' . $this->adress[0]->state . ' ' . $this->adress[0]->zip;
+        $products = Cart::with('productImage')->where('usersession', $this->finduser)->where('Selected', 1)->get();
+        $invoiceNumber = 'ORD-' . uniqid();
+        $order = Order::create([
+        'order_number' => $invoiceNumber,
+        'user_id' => $this->finduser,
+        'products' => $products,
+        'total_amount' => $this->finaltotal,
+        'shipping_address' => $adressshipping,
+        'status' => 'Packaging',
+        ]);
+
         $this->alertMessage = 'Item was placed successfully!';
         return redirect()->route('welcome')->with('success', $this->alertMessage);
     }

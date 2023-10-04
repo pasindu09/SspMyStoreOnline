@@ -132,27 +132,28 @@
                 </div>
                 <label for="billing-address" class="mt-4 mb-2 block text-sm font-medium">Billing Address</label>
                 <div class="flex flex-col sm:flex-row">
-
+                    @if($adress->isNotEmpty())
+                    @else
                     <button wire:click="CreateAdress()" class="mt-6 w-20 rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Create Address</button>
-                    <p>or</p>
+                    @endif
 
-                 
-                    <div class="flex flex-col mb-4 font-semibold text-gray-900 dark:text-white">Select Address
+                    @if($adress->isNotEmpty())
+                    <div class="flex flex-col mb-4 font-normal text-gray-900 dark:text-white">Select Address
 
-<ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-    @if($adress)
-@foreach($adress as $index => $add)
-    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500">
-            <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Address {{$index}}</label>
-        </div>
-    </li>
-    @endforeach
-    @endif
-</ul>
+                        <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                          
+                            @foreach($adress as $index => $add)
+                            <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                <div class="flex items-center pl-3">
+                                    <input id="list-radio-id" type="radio" value="" name="list-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="list-radio-id" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Address {{$index}}</label>
+                                </div>
+                            </li>
+                            @endforeach
+                            @endif
+                        </ul>
                     </div>
-                 
+
                 </div>
 
 
@@ -166,12 +167,13 @@
                         <p class="text-sm font-medium text-gray-900">Small Tax Fee</p>
                         <p class="font-semibold text-gray-900">${{$tax}}</p>
                     </div>
-                </div>
-                <div class="mt-6 flex items-center justify-between">
+                    <div class="mt-6 flex items-center justify-between">
                     <p class="text-sm font-medium text-gray-900">Total</p>
                     <p class="text-2xl font-semibold text-gray-900">${{$finaltotal}}</p>
                 </div>
-            </div>
+                </div>
+                
+           
             <button wire:click="placeorder()" class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Place Order</button>
             @if($alertMessage)
             <div class="fixed inset-0 flex items-center justify-center z-50">
@@ -180,11 +182,11 @@
                     <span class="block sm:inline">{{ $alertMessage }}</span>
                 </div>
             </div>
-        @endif
+            @endif
         </div>
     </div>
     @livewireScripts
-    
+
 </body>
 
 </html>

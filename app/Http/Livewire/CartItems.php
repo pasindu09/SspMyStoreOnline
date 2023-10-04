@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\cart;
+use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\sellers;
 use Illuminate\Console\View\Components\Alert;
@@ -510,14 +511,23 @@ class CartItems extends Component
 
     public function checkout()
     {
+        $products = Cart::with('productImage')->where('usersession', $this->finduser)->where('Selected', 1)->get();
+        $invoiceNumber = 'INV-' . uniqid();
         if (auth()->check()) {
             $user = auth()->user()->id;
             $item = Cart::where('usersession', $user)->where('Selected', 1)->count();
             if ($item > 0) {
                 if (auth()->user()->role == 0) {
+                    $invoice = Invoice::create([
+                        'user_id' => auth()->user()->id,
+                        'products' => $products,
+                        'invoice_number' => $invoiceNumber,
+                        'status' => 'pending',
+                    ]);
                     return redirect()->route('checkout');
                 }
             }
+
         } else {
             return redirect()->route('register');
         }

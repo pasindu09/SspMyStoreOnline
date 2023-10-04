@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('invoice_number')->unique();
-            $table->unsignedBigInteger('order_id');
-            $table->decimal('total_amount', 10, 2);
-            $table->date('due_date');
-            $table->string('status');
-            $table->timestamp('issued_at');
-            $table->timestamp('paid_at')->nullable();
+            $table->string('user_id');
+            $table->json('products');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
