@@ -33,7 +33,7 @@
       </div>
 
       <div class="flex justify-between">
-        <div class="ml-12 table-container" style="height:500px; overflow-y: auto;">
+        <div class="ml-12 table-container overflow-x-hidden" style="height:451px; overflow-y: auto;">
           <table class="ml-12 table-fixed">
             <thead class="text-gray-600 border-y-2">
               <tr>
@@ -50,7 +50,7 @@
               @foreach($cartItemsForUser as $index => $item)
               @if($item->quantity > 0)
               <tr class="border-b-1">
-                <td class="py-4 px-6 border-b">
+                <td class="border-b">
 
                   @if($arrayOfItemSelectedOrNot[$index] == 1)
                   <input type="checkbox" class="w-4 h-4" id="checkbox" checked {{ $checkboxState ? 'checked' : '' }} onclick="updateCheckboxState(this, {{$item->id}})">

@@ -448,7 +448,7 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th
-                                                                            class="px-8 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                                                             <div class="flex cursor-pointer">
                                                                                 <span class="mr-2">PRODUCT NAME</span>
                                                                             </div>
@@ -491,21 +491,21 @@
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody class="bg-white divide-y divide-gray-200">
+                                                                <tbody class="bg-white divide-y divide-gray-200 text-center">
                                                                 @foreach($userproduct as $index => $product)
-                                                                    <tr ml-12>
+                                                                    <tr class="px-4">
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$product->Productname}}</p>
                                                                             <p class="text-xs text-gray-400">PC & Laptop
                                                                             </p>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$product->id}}3</p>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex text-green-500">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                                     class="w-5 h-5 mr-1" fill="none"
@@ -520,19 +520,19 @@
                                                                             </div>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$viewarr[$index]}}</p>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$viewclicks[$index]}}</p>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$abncart1[$index]}}</p>
                                                                         </td>
                                                                         <td
-                                                                            class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
+                                                                            class="px-8 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$valselected2[$index]}}</p>
                                                                         </td>
                                                                     </tr>
