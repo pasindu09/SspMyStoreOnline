@@ -498,14 +498,16 @@ class CartItems extends Component
             $item = Cart::where('id', $id)->where('usersession', $this->finduser)->first();
             $item->update([
                 'quantity' => 0,
-                'Selected' => null
+                'Selected' => null,
+                'Abandonedtimes' => 0,
             ]);
             $this->emit('refreshComponent');
         } else {
             $item = Cart::where('id', $id)->where('usersession', $this->user)->first();
             $item->update([
                 'quantity' => 0,
-                'Selected' => null
+                'Selected' => null,
+                'Abandonedtimes' => 0,
             ]);
             $this->emit('refreshComponent');
         }

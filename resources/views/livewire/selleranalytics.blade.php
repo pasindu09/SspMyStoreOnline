@@ -344,7 +344,7 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">$4510</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">${{$orderdata1}}</div>
 
                                                     <div class="mt-1 text-base text-gray-600">$Total Revenue</div>
                                                 </div>
@@ -368,7 +368,7 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">$3000</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">${{$orderdata1}}</div>
 
                                                     <div class="mt-1 text-base text-gray-600">Revenue For The Month</div>
                                                 </div>
@@ -395,7 +395,7 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">32</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">{{$countitems}}</div>
 
                                                     <div class="mt-1 text-base text-gray-600">Total Items Sold</div>
                                                 </div>
@@ -419,7 +419,7 @@
                                             </div>
                                             <div class="ml-2 w-full flex-1">
                                                 <div>
-                                                    <div class="mt-3 text-3xl font-bold leading-8">55%</div>
+                                                    <div class="mt-3 text-3xl font-bold leading-8">0%</div>
 
                                                     <div class="mt-1 text-base text-gray-600">Increase In Sales</div>
                                                 </div>
@@ -448,7 +448,7 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th
-                                                                            class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                            class="px-8 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                                                             <div class="flex cursor-pointer">
                                                                                 <span class="mr-2">PRODUCT NAME</span>
                                                                             </div>
@@ -486,14 +486,14 @@
                                                                         <th
                                                                             class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                                                             <div class="flex cursor-pointer">
-                                                                                <span class="mr-2">Item Not Checked Out</span>
+                                                                                <span class="mr-2">Item Added To Cart but not checked out</span>
                                                                             </div>
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody class="bg-white divide-y divide-gray-200">
                                                                 @foreach($userproduct as $index => $product)
-                                                                    <tr>
+                                                                    <tr ml-12>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <p>{{$product->Productname}}</p>
@@ -521,19 +521,19 @@
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>{{$viewclicks[$index]->viewclicks}}</p>
+                                                                            <p>{{$viewarr[$index]}}</p>
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>{{$viewclicks[$index]->addtocartclicks}}</p>
+                                                                            <p>{{$viewclicks[$index]}}</p>
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>{{$viewclicks[$index]->addtocartclicks}}</p>
+                                                                            <p>{{$abncart1[$index]}}</p>
                                                                         </td>
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
-                                                                            <p>{{$viewclicks[$index]->viewclicks}}</p>
+                                                                            <p>{{$valselected2[$index]}}</p>
                                                                         </td>
                                                                     </tr>
                                                                     @endforeach
@@ -670,7 +670,7 @@
                             label: 'Total',
                             formatter: function(w) {
                                 // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                                return 249
+                                return 14
                             }
                         }
                     }

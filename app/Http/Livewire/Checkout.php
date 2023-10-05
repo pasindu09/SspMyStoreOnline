@@ -67,6 +67,13 @@ class Checkout extends Component
         'status' => 'Packaging',
         ]);
 
+        foreach($products as $it){
+            $it->update([
+                'Selected' => null,
+                'Abandonedtimes' => '0',
+              ]);
+        }
+
         $this->alertMessage = 'Item was placed successfully!';
         return redirect()->route('welcome')->with('success', $this->alertMessage);
     }

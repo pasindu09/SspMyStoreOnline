@@ -93,7 +93,12 @@ Route::get('/checkout', function () {
 Route::get('/getcreateadress', function () {
     return view('createaddressbook');
 })->name('addresscreate');
-     
+
+Route::get('/getcreateadress', function () {
+    return view('createaddressbook2');
+})->name('addresscreate2');
+
+Route::post('/createAdressBook2', [AdressBookController::class, 'createAdressBook2'])->name('createAdressBook2');
 
 Route::post('/createAdressBook', [AdressBookController::class, 'createAdressBook'])->name('createAdressBook');
 
@@ -105,4 +110,6 @@ Route::get('/myaddressbook', function () {
 Route::get('/myorder', function () {
     return view('Myorder');
 })->name('myorder');
+
+Route::get('/adressbookforuser', [AdressBookController::class, 'loadadreses'])->name('adressbookforuser');
 

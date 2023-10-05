@@ -57,7 +57,8 @@ class Test1 extends Component
 
             $item->update([
               'addtocartclicks' => $newdata2,
-              'quantity' => $newdata
+              'quantity' => $newdata,
+              'Abandonedtimes' => '1',
             ]);
 
             $this->lemem = Cart::where('usersession', $this->finduser)->get();
@@ -73,6 +74,7 @@ class Test1 extends Component
             'addtocartclicks' => '1',
             'usersession' => $this->finduser,
             'quantity' => '1',
+            'Abandonedtimes' => '1',
             'imagepath' => $imagePath,
           ]);
           $this->lemem = Cart::where('usersession', $this->finduser)->get();
@@ -90,6 +92,7 @@ class Test1 extends Component
 
           $item->update([
             'addtocartclicks' => $newdata2,
+            'Abandonedtimes' => '1',
             'quantity' => $newdata
           ]);
 
@@ -105,6 +108,7 @@ class Test1 extends Component
           'addtocartclicks' => '1',
           'usersession' => $this->user,
           'quantity' => '1',
+          'Abandonedtimes' => '1',
           'imagepath' => $imagePath,
         ]);
         $this->lemem = Cart::where('usersession', $this->user)->get();
@@ -137,6 +141,7 @@ class Test1 extends Component
           'usersession' => $this->finduser,
           'quantity' => '0',
           'viewclicks' => '1',
+          'Abandonedtimes' => '1',
           'imagepath' => $path,
         ]);
       }
@@ -149,6 +154,7 @@ class Test1 extends Component
 
 
           $item->update([
+            'Abandonedtimes' => '1',
             'viewclicks' => $data,
           ]);
         }
@@ -158,6 +164,7 @@ class Test1 extends Component
           'addtocartclicks' => '0',
           'usersession' => $this->user,
           'quantity' => '0',
+          'Abandonedtimes' => '1',
           'viewclicks' => '1',
           'imagepath' => $path,
         ]);
@@ -172,6 +179,7 @@ class Test1 extends Component
           $item = Cart::where('product_id', $id)->where('usersession', $this->finduser)->first();
           $item->update([
               'quantity' => 0,
+              'Abandonedtimes' => '0',
               'Selected' => null
           ]);
           $this->emit('refreshComponent');
@@ -179,6 +187,7 @@ class Test1 extends Component
           $item = Cart::where('product_id', $id)->where('usersession', $this->user)->first();
           $item->update([
               'quantity' => 0,
+              'Abandonedtimes' => '0',
               'Selected' => null
           ]);
           $this->emit('refreshComponent');
