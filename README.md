@@ -22,6 +22,11 @@
 
 Welcome to the development journey of the CRM system for MyStoreOnline, an e-commerce platform designed to streamline and enhance customer relationships. This innovative CRM system is poised to revolutionize the way MyStoreOnline manages its products and interacts with its valued customers. The system will feature several essential modules, each tailored to address specific aspects of the e-commerce platform.
 
+## Project Document
+[Project Document.pdf](https://github.com/pasindu09/Sspmystoreonline/files/12918344/SSP.2.FINAL.pdf)
+
+
+
 ## Screenshots
 
 ### Home Page(1)
@@ -63,10 +68,26 @@ Welcome to the development journey of the CRM system for MyStoreOnline, an e-com
 
 
 ## User Features
-
+- **User Authentication** - Users have the ability to create an account, log in, and reset their password if needed.
+- **Product Catalog** - Users can explore the catalog, accessing detailed information about each product.
+- **Shopping Cart** - Users can add items to their cart for later purchase and proceed to checkout.
+- **Checkout** - Users can complete their purchase by providing necessary information and making payment.
+- **Order History** - Users can review their past orders along with specific details for each one.
+- **Address Book** - Users can manage their addresses, including adding, editing, and deleting entries.
+- **Profile** - Users have the option to update their profile details and change their password.
 
 ## Admin Features
+- **Admin Authentication** - Admins can log in securely to access the admin dashboard.
+- **Admin Dashboard** - Admins have a centralized view, including user and seller lists, with the ability to manage users.
+- **User Management** - Admins can oversee user details and make necessary updates.
+- **User Metrics** - Sellers have access to insightful user statistics.
 
+## Seller Features
+- **Analytics** - Sellers can gain insights into various aspects of their shop's performance.
+- **Revenue Metrics** - Sellers can monitor revenue-related metrics for their store.
+- **Product Metrics** - Sellers can track metrics related to their products' performance.
+- **Product Management** - Admins can view and modify product information.
+- **Profile** - Sellers have the option to update their profile information and modify their password.
 
 
 ## Getting Started
