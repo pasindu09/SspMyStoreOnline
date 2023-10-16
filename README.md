@@ -14,9 +14,7 @@
   - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
-- [Credits](#credits)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 ## About MyStoreOnline
 
