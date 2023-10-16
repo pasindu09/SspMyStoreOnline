@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/cf13edf5-a169-471f-88f9-2d77e14e1fc4" alt="Sspmystoreonline" width="500">
+  <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/cf13edf5-a169-471f-88f9-2d77e14e1fc4" alt="Sspmystoreonline" height="200" width="500">
 </div>
 
 ## Table of Contents
