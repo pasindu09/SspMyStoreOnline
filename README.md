@@ -33,7 +33,7 @@ Welcome to the development journey of the CRM system for MyStoreOnline, an e-com
  
 </div>
 
-<div align="center">
+<div align="center" margin-top="12">
  <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/7d531860-0063-4268-a5d3-e4459e680d0f"
         alt="MyStoreOnlinehome"
         width="600">
