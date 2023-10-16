@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107633188/69e9fcb6-687d-4b4b-9ab1-002d1518791b" alt="Sspmystoreonline" width="500">
+  <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/cf13edf5-a169-471f-88f9-2d77e14e1fc4" alt="Sspmystoreonline" width="500">
 </div>
-
 
 ## Table of Contents
 
