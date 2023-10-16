@@ -40,4 +40,11 @@ Welcome to the development journey of the CRM system for MyStoreOnline, an e-com
         width="600">
 </div>
 
+### Home Page(3)
+<div align="center">
+ <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/f16eb205-418f-4b8e-94b7-debbb74cfc63"
+        alt="MyStoreOnlinehome"
+        width="600">
+
+</div>
 
