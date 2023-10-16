@@ -29,10 +29,10 @@ Welcome to the development journey of the CRM system for MyStoreOnline, an e-com
 <div align="center">
   <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/446afb65-d793-432e-be07-e10c49e3c6ce"
         alt="MyStoreOnlinehome"
-        width="700" height="800">
+        width="full" height="800">
   <img src="https://github.com/pasindu09/Sspmystoreonline/assets/107637958/7d531860-0063-4268-a5d3-e4459e680d0f"
         alt="MyStoreOnlinehome"
-        width="700" height="800">
+        width="full" height="800">
 </div>
 
 
